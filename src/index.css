@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 5px;
+}
+
+.header {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-top: 5px;
+  border-bottom: 1px solid grey
+}

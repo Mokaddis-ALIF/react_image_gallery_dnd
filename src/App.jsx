@@ -8,8 +8,22 @@ import img11 from './assets/images/image-11.jpeg'
 import img10 from './assets/images/image-10.jpeg'
 import img7 from './assets/images/image-7.webp'
 import img9 from './assets/images/image-9.webp'
+import Knight from "./Chess/Knight";
+import Square from "./Chess/Square";
 // import img11 from './assets/images/image-11.jpeg'
 
+// import React from 'react'
+// import { DndProvider } from 'react-dnd'
+// import { HTML5Backend } from 'react-dnd-html5-backend'
+
+// function Board() {
+//   /* ... */
+//   return <DndProvider backend={HTML5Backend}>...</DndProvider>
+// }
+
+export const ItemTypes = {
+  KNIGHT: 'knight'
+}
 
 const App = () => {
   const images = [
@@ -29,15 +43,28 @@ const App = () => {
     <div className="app">
       {/* <h1>Image Gallery</h1>
       <ImageGallery images={images} /> */}
-      <div className="main">
+      {/* <div className="main">
         <div className="header">
           <div> <span>0 files selected</span></div>
           <span>Delete files</span>
         </div>
         <Grid images={images} />
-      </div>
+      </div> */}
+      <Square black>
+        <Knight />
+      </Square>
+
     </div>
   );
 };
 
 export default App;
+
+
+function renderSquare(x, y, [knightX, knightY]) {
+  const black = (x + y) % 2 === 1
+  const isKnightHere = knightX === x && knightY === y
+  const piece = isKnightHere ? <Knight /> : null
+
+  return <Square black={black}>{piece}</Square>
+}

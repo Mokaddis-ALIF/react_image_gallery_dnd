@@ -79,8 +79,11 @@ export default function index({ state, setState }) {
                 <div
                     className={`${index == 0 ? 'image-grid-col-2 image-grid-row-2' : ''} main-div`}
                     key={index}
-
-
+                    onDragStart={(e) => dragStart(e, index)}
+                    onDragEnter={(e) => dragEnter(e, index)}
+                    onDragEnd={drop}
+                    draggable={!image.checked}
+                    style={{ opacity: image.checked ? 0.6 : 1 }}
                 >
 
 
@@ -91,10 +94,7 @@ export default function index({ state, setState }) {
                         <span className="checkmark"></span>
                     </label>
                     <img
-                        onDragStart={(e) => dragStart(e, index)}
-                        onDragEnter={(e) => dragEnter(e, index)}
-                        onDragEnd={drop}
-                        draggable={!image.checked} // Disable dragging if image is checked
+                        // Disable dragging if image is checked
                         src={image.url}
                         className='grid-img'
                     // onMouseEnter={() => mouseEnterHandler(image.id)}
@@ -106,9 +106,12 @@ export default function index({ state, setState }) {
                     //     // transition: image.hover == true ? 'opacity 0.25s' : ''
                     // }}
                     />
-                    <div class="overlay">
-                        <div class="text"></div>
-                    </div>
+                    {
+                        !image.checked &&
+                        <div class="overlay">
+                            <div class="text"></div>
+                        </div>
+                    }
                 </div>
             ))}
         </div>

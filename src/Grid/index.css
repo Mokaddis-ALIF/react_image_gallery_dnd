@@ -28,21 +28,21 @@
     object-fit: cover;
     object-position: center;
     border: 1px solid rgba(165, 159, 159, 0.3);
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .overlay {
     position: absolute;
-    top: 0;
+    top: 1px;
     bottom: 0;
-    left: 0;
+    left: 0.8px;
     right: 0;
     height: 100%;
     width: 100%;
     opacity: 0;
     transition: .5s ease;
     background-color: rgba(92, 90, 90, 0.3);
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .grid-img:hover {
@@ -68,7 +68,7 @@
 
 .container {
     position: absolute;
-    top: 40px;
+    top: 20px;
     left: 15px;
     cursor: pointer;
     z-index: 999;

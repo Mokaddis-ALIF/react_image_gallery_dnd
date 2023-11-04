@@ -13,7 +13,9 @@ import { useState } from "react";
 
 
 const App = () => {
-  const images = [
+
+
+  const [state, setState] = useState([
     { id: 1, url: img11, checked: false, hover: false },
     { id: 2, url: img3, checked: false, hover: false },
     { id: 3, url: img2, checked: false, hover: false },
@@ -22,15 +24,15 @@ const App = () => {
     { id: 6, url: img9, checked: false, hover: false },
     { id: 7, url: img10, checked: false, hover: false },
     { id: 8, url: img4, checked: false, hover: false },
+    { id: 8, url: img1, checked: false, hover: false },
 
     // Add more images here
-  ];
-
-  const [state, setState] = useState(images)
+  ])
   console.log(state);
 
 
-  // const selectedFiles = state.filter(item => item.checked == true)
+  const selectedFiles = state.filter(item => item.checked == true)
+  console.log(selectedFiles);
 
   return (
     <div className="app">
@@ -43,10 +45,13 @@ const App = () => {
               <input type="checkbox" checked={selectedFiles.length == 0 ? false : true} ></input>
               <span className="checkmark"></span>
             </label> */}
-            <span>{ } files selected</span></div>
+            <span>{selectedFiles.length} files selected</span></div>
           <span>Delete files</span>
         </div>
         <Grid state={state} setState={setState} />
+      </div>
+      <div className="image-container">
+        <img style={{ height: '200px' }} src="/src/assets/images/image-1.webp" />
       </div>
     </div>
   );

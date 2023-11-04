@@ -17,6 +17,7 @@ export default function index({ state, setState }) {
     };
 
     const drop = (e) => {
+
         const copyListItems = [...state];
         const dragItemContent = copyListItems[dragItem.current];
         copyListItems.splice(dragItem.current, 1);
@@ -93,7 +94,7 @@ export default function index({ state, setState }) {
                         onDragStart={(e) => dragStart(e, index)}
                         onDragEnter={(e) => dragEnter(e, index)}
                         onDragEnd={drop}
-                        draggable={image.checked == true ? true : false}
+                        draggable={!image.checked} // Disable dragging if image is checked
                         src={image.url}
                         className='grid-img'
                     // onMouseEnter={() => mouseEnterHandler(image.id)}

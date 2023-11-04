@@ -28,15 +28,25 @@ export default function index({ images }) {
     return (
         <div className='image-grid'>
             {state.map((image, index) => (
-                <img
-                    onDragStart={(e) => dragStart(e, index)}
-                    onDragEnter={(e) => dragEnter(e, index)}
-                    onDragEnd={drop}
-                    draggable
-                    src={image.url}
-                    key={index}
+                <div
                     className={`${index == 0 ? 'image-grid-col-2 image-grid-row-2' : ''}`}
-                />
+                    key={index}>
+
+
+                    <label className="container">One
+                        <input type="checkbox" checked="checked"></input>
+                        <span className="checkmark"></span>
+                    </label>
+
+                    <img
+                        onDragStart={(e) => dragStart(e, index)}
+                        onDragEnter={(e) => dragEnter(e, index)}
+                        onDragEnd={drop}
+                        draggable
+                        src={image.url}
+                        className='grid-img'
+                    />
+                </div>
             ))}
         </div>
     )

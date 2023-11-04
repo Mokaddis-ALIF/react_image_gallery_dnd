@@ -106,6 +106,9 @@ export default function index({ state, setState }) {
                     //     // transition: image.hover == true ? 'opacity 0.25s' : ''
                     // }}
                     />
+                    <div class="overlay">
+                        <div class="text"></div>
+                    </div>
                 </div>
             ))}
         </div>

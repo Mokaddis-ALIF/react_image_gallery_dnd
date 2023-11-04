@@ -12,11 +12,27 @@
     gap: var(--gap);
 }
 
+.main-div :hover {
+    /* opacity: 0.6;
+    transition: opacity 0.25s; */
+    background-color: red;
+}
+
 .grid-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    border: 1px solid #808080;
+    border-radius: 10px;
 }
+
+/* .grid-img:hover {
+    opacity: 0.5;
+    transition: opacity 0.25s; 
+
+    background: red; 
+} */
 
 .image-grid-col-2 {
     grid-column: span 2;
@@ -24,6 +40,20 @@
 
 .image-grid-row-2 {
     grid-row: span 2;
+}
+
+.container {
+    position: relative;
+    top: 40px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 999;
+    /* height: 40px;
+    width: 40px; */
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
 }
 
 /* Anything udner 1024px */
